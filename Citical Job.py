@@ -1,8 +1,8 @@
 import Benefits
 import Annuities
 
-leeftijd = 25
-lengteContract = 5
+leeftijd = 20
+lengteContract = 65 - leeftijd
 
 b1 = 0.1 / 100
 b2 = 0.001 / 100
@@ -17,7 +17,7 @@ mGetPayed = 12
 
 
 def KO(t, x, m, n, rente):
-    return 8500
+    return 25000
 
 
 def KL(t, x, m, n, rente):
@@ -42,4 +42,4 @@ for k in range(0, lengteContract):
 
 print("UP: " + str(UP))
 print("PP: " + str(PP))
-print("mtly payments: " + str(PP/mGetPayed))
+print("Monthly payments they have to do: " + str(PP/mGetPayed))
