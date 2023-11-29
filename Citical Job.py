@@ -1,7 +1,7 @@
 import Benefits
 import Annuities
 
-leeftijd = 50
+leeftijd = 25
 lengteContract = 5
 
 b1 = 0.1 / 100
@@ -28,10 +28,10 @@ def const1(t, x, m, n, rente):
     return 1
 
 
-benefit = (Benefits.TermMtly(leeftijd, mPay, leeftijd + lengteContract, i - b1, KO)
+benefit = (Benefits.TermMtly(leeftijd, mPay, lengteContract, i - b1, KO)
            + Annuities.TermAnnuityMtlyDue(leeftijd, mPay, lengteContract, i-b1, KL))
 annuity = Annuities.TermAnnuityMtlyDue(leeftijd, mGetPayed, lengteContract, i - b1, const1)
-inventaris = b2 * annuity
+inventaris = KO(0, leeftijd, mGetPayed, lengteContract, i-b1)*b2 * annuity
 
 UP = (benefit + inventaris) / (1 - C)
 PP = UP / annuity
@@ -42,3 +42,4 @@ for k in range(0, lengteContract):
 
 print("UP: " + str(UP))
 print("PP: " + str(PP))
+print("mtly payments: " + str(PP/mGetPayed))
