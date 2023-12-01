@@ -28,7 +28,7 @@ def TermMtly(x, m, n, rente, KO):
 
 
 def PureEndow(n, x, rente, KL):
-    return KL(n, x, rente)*v(rente)**n * npx(n, x)
+    return KL(n, x, rente) * v(rente)**n * npx(n, x)
 
 
 def EndowCont(n, x, rente, KO, KL):
